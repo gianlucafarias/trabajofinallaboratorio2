@@ -81,13 +81,19 @@ public class MenuPrincipal {
                             }
                             break;
                         case 3:
-                            System.out.println("Ingrese el Codigo de Barras del producto: ");
-                            opcion = Productos.ingresarNumeroEntero("Ingrese una Opción: ");
-                         //   entrada.nextLine();
+                        	boolean flag = false;
+                            int codigoBarras = Productos.ingresarNumeroEntero("Ingrese el Codigo de Barras del producto: ");
                             for (Productos producto : Productos.arrayProductos) {
-                        	    System.out.println(producto.obtenerInformacionImportante(opcion));
-                        	}
-                            break;
+                            	if (producto.obtenerInformacionImportante(codigoBarras).equals("Producto no encontrado")) {
+                            		continue;
+                            		}
+                            	 System.out.println(producto.obtenerInformacionImportante(codigoBarras));
+                                 flag = true;
+                             }
+                             if (!flag) {
+                                 System.out.println("Producto no encontrado");
+                             }
+                             break;
                         case 4:
                             int codigoBarraConsulta = Productos.ingresarNumeroEntero("Ingrese el código de barras del producto para consultar su vencimiento: ");
                          //   entrada.nextLine();
