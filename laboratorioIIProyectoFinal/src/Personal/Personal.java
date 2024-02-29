@@ -56,6 +56,7 @@ public class Personal {
 	public static void mostrarCantidadPersonal() {
 	    System.out.println("Cantidad de Personal: " + ArrayPersonal.size());
 	}
+
 	
 	public static void crearPersonal() {
 		String nombre, apellido, legajo;
@@ -65,8 +66,13 @@ public class Personal {
 		nombre = entrada.nextLine();
 		System.out.println("2. Ingrese el apellido del nuevo Personal: ");
 		apellido = entrada.nextLine();
-		System.out.println("3. Ingrese el Legajo del nuevo Personal (este servira como identificador de personal): ");
-		legajo = entrada.nextLine();
+		do {
+            System.out.println("3. Ingrese el Legajo del nuevo Personal (este servira como identificador de personal): ");
+    		legajo = entrada.nextLine();
+            if (!validarLegajo(legajo)) {
+                System.out.println("Ya existe ese legajo. Intente con otro.");
+            }
+        } while (!validarLegajo(legajo));
 		dni = Productos.ingresarNumeroEntero("4. Ingrese el DNI del nuevo Personal: ");
 				
 		 try {
@@ -104,5 +110,14 @@ public class Personal {
             System.out.println("Nombre: " + personal.getNombre() + "\nApellido: " + personal.getApellido() +
                     "\nDNI: " + personal.getDni() + "\nLegajo: " + personal.getLegajo() + "\n---");
         }
+    }
+	
+	public static boolean validarLegajo(String legajo) {
+        for (Personal personal : ArrayPersonal) {
+            if (personal.getLegajo().equals(legajo)) {
+                return false; // El legajo ya existe, no es válido
+            }
+        }
+        return true; // El legajo es válido
     }
 }

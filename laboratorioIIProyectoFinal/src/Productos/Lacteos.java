@@ -80,7 +80,7 @@ public class Lacteos extends Productos implements Fecha {
 	    
 	    try {
 	    	Lacteos productoLacteo = new Lacteos (codigoBarra, Categorias.ALIMENTOS, marca, descripcion, precio, stock, fechaVencimiento, fechaFabricacion);
-		    ArrayLacteos.add(productoLacteo);
+		//    ArrayLacteos.add(productoLacteo);
 			String guardarLacteo = codigoBarra + "|" + marca + "|" + descripcion + "|" + stock + "|" + precio + "|" + fechaFabricacion.format(formatter) + "|" + fechaVencimiento.format(formatter);
 			Archivo.escribirArchivo(ArchivoAlimentos.archivo, guardarLacteo);
 	        System.out.println("Producto creado y agregado exitosamente a la lista.");

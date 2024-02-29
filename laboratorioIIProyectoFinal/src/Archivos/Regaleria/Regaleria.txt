@@ -1,1 +1,1 @@
-123|stanley|termo|12|400.0|aluminio
+123|stanley|termo|14|4000.0|aluminio

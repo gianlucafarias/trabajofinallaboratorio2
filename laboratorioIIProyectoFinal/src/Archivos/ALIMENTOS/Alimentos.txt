@@ -1,5 +1,4 @@
 432|sancor|leche|50|800.0|15-02-2024|15-03-2024
 431|la serenisima|leche entera|43|700.0|16-02-2024|16-03-2024
 430|lactear|leche descremada|40|980.0|15-02-2024|14-03-2024
-429|la paulina|queso untable|43|450.0|16-01-2024|15-02-2024
-321|sancor|manteca|14|450.0|15-02-2024|14-05-2024
+429|lechi|leche descremada|43|450.0|16-01-2024|15-03-2024
